@@ -45,7 +45,9 @@
     },
     "config": {
         "sort-packages": true,
-        "allow-plugins": true
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "extra": {
         "branch-alias": {
