@@ -2,6 +2,7 @@
 
 namespace Vldmrk\SyliusWhatInBoxPlugin\Entity;
 
+use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Product\Model\ProductVariantTranslationInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
@@ -32,13 +33,8 @@ class WhatInBox implements WhatInBoxInterface {
     /** @var ProductInterface|null */
     protected $product;
 
-    protected ?File $mediaFile = null;
-
-    /** @var string|null */
-    protected $mediaPath;
-
-    /** @var string|null */
-    protected $mediaMimeType;
+    /** @var ImageInterface|null */
+    protected $image;
 
     /** @var int|null */
     protected $position;
@@ -71,52 +67,17 @@ class WhatInBox implements WhatInBoxInterface {
         return $this->product;
     }
 
-    /**
-     * @param File|null $file
-     */
-    public function setMediaFile(?File $file): void
+    /** @return ImageInterface|null */
+    public function getImage(): ?ImageInterface
     {
-        $this->mediaFile = $file;
+        return $this->image;
     }
 
-    /**
-     * @return File|null
-     */
-    public function getMediaFile(): ?File
+    /** @param ImageInterface|null $image */
+    public function setImage(?ImageInterface $image): void
     {
-        return $this->mediaFile;
-    }
-
-    /**
-     * @param string|null $mediaPath
-     */
-    public function setMediaPath(?string $mediaPath): void
-    {
-        $this->mediaPath = $mediaPath;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMediaPath(): ?string
-    {
-        return $this->mediaPath;
-    }
-
-    /**
-     * @param string|null $mediaMimeType
-     */
-    public function setMediaMimeType(?string $mediaMimeType): void
-    {
-        $this->mediaMimeType = $mediaMimeType;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMediaMimeType(): ?string
-    {
-        return $this->mediaMimeType;
+        $image->setOwner($this);
+        $this->image = $image;
     }
 
     /**

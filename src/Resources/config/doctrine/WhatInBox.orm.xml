@@ -15,10 +15,6 @@
 
         <field name="enabled" column="enabled" type="boolean"/>
 
-        <field name="mediaPath" column="media_path" type="string" length="250" unique="true"/>
-
-        <field name="mediaMimeType" column="media_mime_type" type="string" length="250" nullable="true"/>
-
         <field name="createdAt" column="created_at" type="datetime" nullable="true">
             <gedmo:timestampable on="create"/>
         </field>
@@ -35,6 +31,12 @@
             <join-column name="product_id" referenced-column-name="id" nullable="false" on-delete="CASCADE" />
             <gedmo:sortable-group />
         </many-to-one>
+
+        <one-to-one field="image" target-entity="Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxImageInterface" mapped-by="owner" orphan-removal="true">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-one>
 
     </mapped-superclass>
 </doctrine-mapping>

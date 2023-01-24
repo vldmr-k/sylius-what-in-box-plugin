@@ -15,13 +15,19 @@ sylius_grid:
           type: string
           label: sylius.ui.code
           sortable: ~
-        name:
-          type: twig
+        title:
+          type: string
           label: sylius.ui.title
-          path: .
+          #path: .
           sortable: title
+          #options:
+          #  template: "@SyliusAdmin/Locale/Grid/Field/name.html.twig"
+        image:
+          type: twig
+          label: sylius.ui.image
+          path: .
           options:
-            template: "@SyliusAdmin/Locale/Grid/Field/name.html.twig"
+            template: "@VldmrkSyliusWhatInBoxPlugin/Admin/Grid/Field/_image.html.twig"
       filters:
         code:
           type: string
@@ -34,9 +40,20 @@ sylius_grid:
           create:
             type: create
             options:
-              product: expr:service('sylius.repository.product').find($productId)
               link:
                 parameters: { productId: $productId }
         item:
           update:
             type: update
+            options:
+              link:
+                parameters:
+                  id: resource.id
+                  productId: $productId
+          delete:
+            type: delete
+            options:
+              link:
+                parameters:
+                  id: resource.id
+                  productId: $productId

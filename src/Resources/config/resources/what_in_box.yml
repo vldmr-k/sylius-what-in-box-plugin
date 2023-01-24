@@ -11,3 +11,8 @@ sylius_resource:
       translation:
         classes:
           model: Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxTranslation
+
+    vldmrk.what_in_box_image:
+      driver: doctrine/orm
+      classes:
+        model: Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxImage

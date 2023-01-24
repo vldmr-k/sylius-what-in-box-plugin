@@ -1,0 +1,6 @@
+Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxTranslation:
+  properties:
+    title:
+      - NotBlank:
+          message: 'vldmrk.what_in_box_translation.title.not_blank'
+          groups: ['sylius']

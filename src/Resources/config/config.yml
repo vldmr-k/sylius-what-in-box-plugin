@@ -6,5 +6,6 @@ imports:
 
 parameters:
   vldmrk.form.type.what_in_box.validation_groups: ['sylius']
+  vldmrk.form.type.what_in_box_image.validation_groups: ['sylius']
   vldmrk.form.type.what_in_box_translation.validation_groups: ['sylius']
 

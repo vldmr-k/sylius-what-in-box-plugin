@@ -1,0 +1,9 @@
+services:
+  vldmrk.form.type.what_in_box_image:
+    class: Vldmrk\SyliusWhatInBoxPlugin\Form\Type\WhatInBoxImageType
+    arguments:
+      - '%vldmrk.model.what_in_box_image.class%'
+      - '%vldmrk.form.type.what_in_box_image.validation_groups%'
+    tags:
+      - { name: form.type }
+

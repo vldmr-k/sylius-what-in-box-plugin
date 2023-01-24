@@ -1,20 +1,20 @@
-#vldmrk_admin_what_in_box:
-#  resource: |
-#    alias: vldmrk.what_in_box
-#    section: admin
-#    templates: "@SyliusAdmin\\Crud"
-#    except: ['show', 'delete']
-#    redirect: index
-#    grid: vldmrk_admin_what_in_box
-#    permission: true
-#    vars:
-#        all:
-#            subheader: sylius.ui.manage_languages_available_in_the_store
-#            templates:
-#                form: "@VldmrkSyliusWhatInBoxPlugin/_form.html.twig"
-#        index:
-#            icon: translate
-#  type: sylius.resource
+vldmrk_admin_what_in_box:
+  resource: |
+    alias: vldmrk.what_in_box
+    section: admin
+    templates: "@SyliusAdmin\\Crud"
+    except: ['show', 'delete']
+    redirect: index
+    grid: vldmrk_admin_what_in_box
+    permission: true
+    vars:
+        all:
+            subheader: sylius.ui.manage_languages_available_in_the_store
+            templates:
+                form: "@VldmrkSyliusWhatInBoxPlugin/_form.html.twig"
+        index:
+            icon: translate
+  type: sylius.resource
 
 
 vldmrk_admin_what_in_box_index:

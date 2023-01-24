@@ -9,7 +9,6 @@ use Sylius\Bundle\ResourceBundle\Form\EventSubscriber\AddCodeFormSubscriber;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Sylius\Bundle\ResourceBundle\Form\Type\ResourceTranslationsType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class WhatInBoxType extends AbstractResourceType
@@ -18,8 +17,9 @@ class WhatInBoxType extends AbstractResourceType
     {
         $builder
             ->addEventSubscriber(new AddCodeFormSubscriber())
-            ->add('mediaFile', FileType::class, [
-                'label' => 'vldmrk.form.what_in_box.image',
+            ->add('image', WhatInBoxImageType::class, [
+                'label' => 'sylius.ui.image',
+                'required' => false,
             ])
             ->add('enabled', CheckboxType::class, [
                 'required' => false,

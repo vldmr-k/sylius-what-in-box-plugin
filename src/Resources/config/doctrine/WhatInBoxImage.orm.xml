@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+>
+    <mapped-superclass name="Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxImage" table="vldmrk_product_what_in_box_image">
+        <one-to-one field="owner" target-entity="Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxInterface" inversed-by="image">
+            <join-column name="owner_id" referenced-column-name="id" nullable="false" on-delete="CASCADE"/>
+        </one-to-one>
+    </mapped-superclass>
+</doctrine-mapping>

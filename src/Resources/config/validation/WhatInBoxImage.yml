@@ -1,0 +1,8 @@
+Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxImage:
+  properties:
+    file:
+      - Image:
+          maxSize: 10M
+          maxSizeMessage: vldmrk.what_in_box_image.file.size_message
+          uploadIniSizeErrorMessage: vldmrk.what_in_box_image.file.upload_ini_size
+          groups: ['sylius']
