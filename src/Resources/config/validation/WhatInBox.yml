@@ -1,0 +1,6 @@
+Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBox:
+  properties:
+    mediaFile:
+      - NotBlank:
+          message: 'vldmrk.what_in_box.media_file.not_blank'
+          groups: ['sylius']

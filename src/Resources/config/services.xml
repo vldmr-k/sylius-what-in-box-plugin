@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!--<service id="vldmrk.admin.menu_builder.product.update" class="Vldmrk\SyliusWhatInBoxPlugin\Menu\ProductUpdateMenuBuilder">
+            <argument type="service" id="knp_menu.factory" />
+            <argument type="service" id="event_dispatcher" />
+            <tag name="knp_menu.menu_builder" method="createMenu" alias="sylius.admin.product.update" />
+        </service>-->
+
+        <service id="vldmrk.factory.what_in_box" class="Vldmrk\SyliusWhatInBoxPlugin\Factory\WhatInBoxFactory">
+            <argument type="string">%vldmrk.factory.what_in_box.class%</argument>
+        </service>
+
+
+        <!--<service id="vldmrk.form.type.what_in_box" class="Vldmrk\SyliusWhatInBoxPlugin\Form\Type\WhatInBoxType">
+            <argument>%vldmrk.model.what_in_box.class%</argument>
+            <argument>%vldmrk.form.type.what_in_box.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="vldmrk.form.type.what_in_box_translation" class="Vldmrk\SyliusWhatInBoxPlugin\Form\Type\WhatInBoxTypeTranslationType">
+            <argument>%vldmrk.model.what_in_box_translation.class%</argument>
+            <argument>%vldmrk.form.type.what_in_box_translation.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>-->
+
+    </services>
+</container>

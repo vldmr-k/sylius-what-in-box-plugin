@@ -1,0 +1,10 @@
+imports:
+  - { resource: "./resources/*.yml" }
+  - { resource: "./grids/*.yml" }
+  - { resource: "./form/*.yml" }
+
+
+parameters:
+  vldmrk.form.type.what_in_box.validation_groups: ['sylius']
+  vldmrk.form.type.what_in_box_translation.validation_groups: ['sylius']
+

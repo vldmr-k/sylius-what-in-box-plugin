@@ -1,0 +1,13 @@
+# config/resources.yaml
+sylius_resource:
+  resources:
+    vldmrk.what_in_box:
+      driver: doctrine/orm # You can use also different driver here
+      classes:
+        model: Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBox
+        repository: Vldmrk\SyliusWhatInBoxPlugin\Repository\WhatInBoxRepository
+        factory: Vldmrk\SyliusWhatInBoxPlugin\Factory\WhatInBoxFactory
+        form: Vldmrk\SyliusWhatInBoxPlugin\Form\Type\WhatInBoxType
+      translation:
+        classes:
+          model: Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBoxTranslation

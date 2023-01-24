@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBox" table="vldmrk_product_what_in_box">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="code" column="code" type="string" length="64" unique="true"/>
+
+        <field name="enabled" column="enabled" type="boolean"/>
+
+        <field name="mediaPath" column="media_path" type="string" length="250" unique="true"/>
+
+        <field name="mediaMimeType" column="media_mime_type" type="string" length="250" nullable="true"/>
+
+        <field name="createdAt" column="created_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="create"/>
+        </field>
+
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="update"/>
+        </field>
+
+        <field name="position" type="integer">
+            <gedmo:sortable-position />
+        </field>
+
+        <many-to-one target-entity="Sylius\Component\Product\Model\ProductInterface" field="product">
+            <join-column name="product_id" referenced-column-name="id" nullable="false" on-delete="CASCADE" />
+            <gedmo:sortable-group />
+        </many-to-one>
+
+    </mapped-superclass>
+</doctrine-mapping>

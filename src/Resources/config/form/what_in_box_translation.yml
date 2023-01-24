@@ -1,0 +1,8 @@
+services:
+  vldmrk.form.type.what_in_box_translation:
+    class: Vldmrk\SyliusWhatInBoxPlugin\Form\Type\WhatInBoxTranslationType
+    arguments:
+      - '%vldmrk.model.what_in_box_translation.class%'
+      - '%vldmrk.form.type.what_in_box_translation.validation_groups%'
+    tags:
+      - { name: form.type }

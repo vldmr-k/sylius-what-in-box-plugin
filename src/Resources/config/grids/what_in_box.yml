@@ -1,0 +1,42 @@
+sylius_grid:
+  grids:
+    vldmrk_admin_what_in_box:
+      driver:
+        name: doctrine/orm
+        options:
+          class: "%vldmrk.model.what_in_box.class%"
+          repository:
+            method: createQueryBuilderByProductId
+            arguments: ["%locale%", $productId]
+      sorting:
+        code: asc
+      fields:
+        code:
+          type: string
+          label: sylius.ui.code
+          sortable: ~
+        name:
+          type: twig
+          label: sylius.ui.title
+          path: .
+          sortable: title
+          options:
+            template: "@SyliusAdmin/Locale/Grid/Field/name.html.twig"
+      filters:
+        code:
+          type: string
+          label: sylius.ui.code
+        title:
+          type: string
+          label: sylius.ui.title
+      actions:
+        main:
+          create:
+            type: create
+            options:
+              product: expr:service('sylius.repository.product').find($productId)
+              link:
+                parameters: { productId: $productId }
+        item:
+          update:
+            type: update
