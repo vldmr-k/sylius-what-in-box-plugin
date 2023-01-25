@@ -9,3 +9,28 @@ parameters:
   vldmrk.form.type.what_in_box_image.validation_groups: ['sylius']
   vldmrk.form.type.what_in_box_translation.validation_groups: ['sylius']
 
+
+services:
+  vldmrk.listener.admin.product.form.menu_builder:
+    class: Vldmrk\SyliusWhatInBoxPlugin\Menu\AdminProductUpdateMenuListener
+    tags:
+      - { name: kernel.event_listener, event: sylius.menu.admin.product.update, method: addItems }
+
+
+sylius_ui:
+  events:
+    sylius.shop.product.show.content:
+      blocks:
+        what_in_box:
+          template: "@VldmrkSyliusWhatInBoxPlugin/Shop/Product/Show/_what_in_box.html.twig"
+          priority: 15
+    vldmrk.admin.what_in_box.index.javascripts:
+      blocks:
+        js:
+          template: "@VldmrkSyliusWhatInBoxPlugin/Admin/_javascripts.html.twig"
+          priority: 60
+
+sylius_grid:
+  templates:
+    action:
+      update_what_in_box_positions: "@VldmrkSyliusWhatInBoxPlugin/Admin/Grid/_updatePositions.html.twig"

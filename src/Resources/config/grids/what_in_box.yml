@@ -9,7 +9,7 @@ sylius_grid:
             method: createQueryBuilderByProductId
             arguments: ["%locale%", $productId]
       sorting:
-        code: asc
+        position: asc
       fields:
         code:
           type: string
@@ -18,16 +18,20 @@ sylius_grid:
         title:
           type: string
           label: sylius.ui.title
-          #path: .
           sortable: title
-          #options:
-          #  template: "@SyliusAdmin/Locale/Grid/Field/name.html.twig"
         image:
           type: twig
           label: sylius.ui.image
           path: .
           options:
             template: "@VldmrkSyliusWhatInBoxPlugin/Admin/Grid/Field/_image.html.twig"
+        position:
+          type: twig
+          label: sylius.ui.position
+          path: .
+          sortable: position
+          options:
+            template: "@VldmrkSyliusWhatInBoxPlugin/Admin/Grid/Field/_position.html.twig"
       filters:
         code:
           type: string
@@ -37,11 +41,16 @@ sylius_grid:
           label: sylius.ui.title
       actions:
         main:
+          update_positions:
+            type: update_what_in_box_positions
+            options:
+              productId: $productId
           create:
             type: create
             options:
               link:
                 parameters: { productId: $productId }
+
         item:
           update:
             type: update

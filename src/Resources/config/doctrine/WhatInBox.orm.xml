@@ -15,19 +15,18 @@
 
         <field name="enabled" column="enabled" type="boolean"/>
 
-        <field name="createdAt" column="created_at" type="datetime" nullable="true">
-            <gedmo:timestampable on="create"/>
-        </field>
-
-        <field name="updatedAt" column="updated_at" type="datetime" nullable="true">
-            <gedmo:timestampable on="update"/>
+        <field name="quantity" type="integer" nullable="false">
+            <options>
+                <option name="comment">The number of items inside the box.</option>
+                <option name="default">0</option>
+            </options>
         </field>
 
         <field name="position" type="integer">
             <gedmo:sortable-position />
         </field>
 
-        <many-to-one target-entity="Sylius\Component\Product\Model\ProductInterface" field="product">
+        <many-to-one target-entity="Sylius\Component\Product\Model\ProductInterface" field="product" mapped-by="whatInBox">
             <join-column name="product_id" referenced-column-name="id" nullable="false" on-delete="CASCADE" />
             <gedmo:sortable-group />
         </many-to-one>
@@ -37,6 +36,15 @@
                 <cascade-all/>
             </cascade>
         </one-to-one>
+
+
+        <field name="createdAt" column="created_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="create"/>
+        </field>
+
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="update"/>
+        </field>
 
     </mapped-superclass>
 </doctrine-mapping>

@@ -9,7 +9,6 @@ use Sylius\Component\Resource\Model\TimestampableTrait;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\TranslatableTrait;
 use Sylius\Component\Resource\Model\TranslationInterface;
-use Symfony\Component\HttpFoundation\File\File;
 
 class WhatInBox implements WhatInBoxInterface {
 
@@ -38,6 +37,9 @@ class WhatInBox implements WhatInBoxInterface {
 
     /** @var int|null */
     protected $position;
+
+    /** @var int|null */
+    protected $quantity;
 
     public function getId()
     {
@@ -94,6 +96,22 @@ class WhatInBox implements WhatInBoxInterface {
     public function getPosition(): ?int
     {
         return $this->position;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param int|null $quantity
+     */
+    public function setQuantity(?int $quantity): void
+    {
+        $this->quantity = $quantity;
     }
 
     /**

@@ -4,6 +4,7 @@ sylius_resource:
     vldmrk.what_in_box:
       driver: doctrine/orm # You can use also different driver here
       classes:
+        controller: Vldmrk\SyliusWhatInBoxPlugin\Controller\WhatInBoxController
         model: Vldmrk\SyliusWhatInBoxPlugin\Entity\WhatInBox
         repository: Vldmrk\SyliusWhatInBoxPlugin\Repository\WhatInBoxRepository
         factory: Vldmrk\SyliusWhatInBoxPlugin\Factory\WhatInBoxFactory

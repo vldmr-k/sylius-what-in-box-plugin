@@ -1,0 +1,7 @@
+<div class="ui four doubling cards">
+
+            {% for item in resources %}
+                {% include '@VldmrkSyliusWhatInBoxPlugin/Shop/WhatInBox/_item.html.twig' with {data: item} %}
+            {% endfor %}
+
+</div>

@@ -1,0 +1,18 @@
+<div class="ui fluid card">
+    <a href="#" class="blurring dimmable image">
+        {% include '@VldmrkSyliusWhatInBoxPlugin/Shop/WhatInBox/_image.html.twig' %}
+    </a>
+    <div class="content">
+        <a href="#" class="header">
+            {{ data.title }}
+        </a>
+        {% if data.quantity %}
+            <span class="meta">
+                x {{ data.quantity }}
+            </span>
+        {% endif %}
+        {% if data.description %}
+            <div class="description">{{ data.description }}</div>
+        {% endif %}
+    </div>
+</div>

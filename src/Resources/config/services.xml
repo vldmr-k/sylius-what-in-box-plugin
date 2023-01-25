@@ -9,6 +9,13 @@
             <argument type="string">%vldmrk.factory.what_in_box.class%</argument>
         </service>
 
+        <!--
+        <service id="vldmrk.admin.menu_builder.product.update" class="Vldmrk\SyliusWhatInBoxPlugin\Menu\ProductUpdateMenuBuilder">
+            <argument type="service" id="knp_menu.factory" />
+            <argument type="service" id="event_dispatcher" />
+            <tag name="knp_menu.menu_builder" method="createMenu" alias="sylius.admin.product.update" />
+        </service>
+        -->
 
         <service id="vldmrk.listener.what_in_box_upload" class="Sylius\Bundle\CoreBundle\EventListener\ImageUploadListener">
             <argument type="service" id="sylius.image_uploader" />

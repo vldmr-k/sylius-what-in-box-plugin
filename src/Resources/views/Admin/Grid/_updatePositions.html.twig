@@ -1,0 +1,6 @@
+<form class="sylius-update-what-in-box" action="{{ path('vldmrk_admin_ajax_product_what_in_box_update_position', {productId: options.productId}) }}" data-csrf-token="{{ csrf_token('update-product-what-in-box-position') }}">
+    <button class="ui labeled loadable icon button sylius-save-position" type="submit">
+        <i class="icon checkmark"></i>
+        {{ 'sylius.ui.save_positions'|trans }}
+    </button>
+</form>

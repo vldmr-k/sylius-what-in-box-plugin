@@ -1,0 +1,12 @@
+vldmrk_shop_what_in_box_by_product_show:
+  path: /what-in-box/by-product/{productId}
+  methods: [GET]
+  defaults:
+    _controller: vldmrk.controller.what_in_box::indexAction
+    _sylius:
+      template: $template
+      repository:
+        method: ["expr:service('vldmrk.repository.what_in_box')", "findByProductId"]
+        arguments:
+          - "%locale%"
+          - $productId
