@@ -10,5 +10,6 @@
 {% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
 
 {% block content %}
+
     {{ sylius_template_event('vldmrk.admin.what_in_box.index.content', _context) }}
 {% endblock %}
