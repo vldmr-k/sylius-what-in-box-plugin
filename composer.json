@@ -2,7 +2,6 @@
     "name": "vldmr-k/sylius-what-in-box-plugin",
     "type": "sylius-plugin",
     "description": "What in the box plugin.",
-    "version": "0.0.1",
     "keywords": [
         "sylius",
         "sylius-plugin"
