@@ -37,3 +37,5 @@ vldmrk_what_in_box_admin:
 
 ###### How it looks on product page
 ![Edit What In Box](examples/product_show.png?raw=true "Title")
+
+This commit special for Karolis Skripka :)
